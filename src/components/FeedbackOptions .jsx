@@ -1,12 +1,11 @@
 // import PropTypes from 'prop-types';
 import { Component } from 'react';
-import css from '../components/FeedbackOptions.module.css';
 import Button from './Button';
 
 export default class FeedbackOptions extends Component {
   render() {
     return (
-      <div className={css.wrap}>
+      <div>
         {this.props.data.map(item => (
           <Button
             name={item}
@@ -18,3 +17,7 @@ export default class FeedbackOptions extends Component {
     );
   }
 }
+
+// FeedbackForm.propTypes = {
+//   this.props: PropTypes.func().isRequired,
+// };

@@ -8,6 +8,3 @@ export const StatisticItem = ({ feedback, count }) => {
     </p>
   );
 };
-{
-  /* <StatisticItem name={feedback} count={count} key={feedback} /> */
-}

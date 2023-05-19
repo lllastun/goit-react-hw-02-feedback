@@ -1,9 +1,7 @@
 import FeedbackOptions from './FeedbackOptions';
 import { Component } from 'react';
 import Statistics from './Statistics';
-import css from './App.module.css';
 
-// export const App = () => {
 export class App extends Component {
   state = {
     bad: 0,
@@ -43,7 +41,6 @@ export class App extends Component {
           marginLeft: '20px',
         }}
       >
-        {/* <h1 className={css.h1}>Please leave feedback</h1> */}
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
             handleClickButton={this.handleClickButton}
