@@ -1,13 +1,12 @@
 // import PropTypes from 'prop-types';
 import { Component } from 'react';
-import css from '../components/FeedbackForm.module.css';
+import css from '../components/FeedbackOptions.module.css';
 import Button from './Button';
 
-export default class FeedbackForm extends Component {
+export default class FeedbackOptions extends Component {
   render() {
     return (
-      <div>
-        <h1 className={css.h1}>Please leave feedback</h1>
+      <div className={css.wrap}>
         {this.props.data.map(item => (
           <Button
             name={item}
