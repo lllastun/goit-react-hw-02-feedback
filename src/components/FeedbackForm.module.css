@@ -9,4 +9,6 @@ form {
 
 button {
   font-size: 22px;
+  margin: 4px;
+  text-transform: capitalize;
 }

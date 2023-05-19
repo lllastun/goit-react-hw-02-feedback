@@ -1,5 +1,6 @@
 import FeedbackForm from './FeedbackForm';
 import { Component } from 'react';
+import Statistics from './Statistics';
 
 // export const App = () => {
 export class App extends Component {
@@ -21,14 +22,16 @@ export class App extends Component {
 
   render() {
     const stateKeys = Object.keys(this.state);
+    const state = { ...this.state };
     return (
       <div
         style={{
           height: '100vh',
           display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          fontSize: 40,
+          fontSize: 16,
           color: '#010101',
         }}
       >
@@ -36,6 +39,7 @@ export class App extends Component {
           handleClickButton={this.handleClickButton}
           data={stateKeys}
         />
+        <Statistics state={state} />
       </div>
     );
   }
