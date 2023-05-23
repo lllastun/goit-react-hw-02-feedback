@@ -19,7 +19,7 @@ export class App extends Component {
   };
 
   render() {
-    const stateKeys = Object.keys(this.state);
+    const listKeys = Object.keys(this.state);
     const state = { ...this.state };
     const Section = ({ title, children }) => (
       <section>
@@ -30,24 +30,21 @@ export class App extends Component {
     return (
       <div
         style={{
-          //   height: '100vh',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'flexStart',
           textAlign: 'left',
-          //   fontSize: 16,
-          //   color: '#010101',
           marginLeft: '20px',
         }}
       >
-        <Section title={'Please leave feedback'}>
+        <Section title="Please leave feedback">
           <FeedbackOptions
             handleClickButton={this.handleClickButton}
-            data={stateKeys}
+            data={listKeys}
           />
         </Section>
-        <Section title={'Statistics'}>
+        <Section title="Statistics">
           <Statistics state={state} />
         </Section>
       </div>
