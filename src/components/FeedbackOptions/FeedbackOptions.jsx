@@ -1,7 +1,7 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Component } from 'react';
-import css from '../components/FeedbackOptions.module.css';
-import Button from './Button';
+import css from './FeedbackOptions.module.css';
+import Button from '../Button/Button';
 
 export default class FeedbackOptions extends Component {
   render() {
@@ -18,3 +18,10 @@ export default class FeedbackOptions extends Component {
     );
   }
 }
+
+FeedbackOptions.propTypes = {
+  optionalObjectWithShape: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    handleClick: PropTypes.func.isRequired,
+  }),
+};

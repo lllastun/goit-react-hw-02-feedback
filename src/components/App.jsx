@@ -1,12 +1,19 @@
-import FeedbackOptions from './FeedbackOptions';
+import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import { Component } from 'react';
-import Statistics from './Statistics';
+import Statistics from './Satistics/Statistics';
+import Notification from './Notification/Notification';
 
 export class App extends Component {
   state = {
     bad: 0,
     neutral: 0,
     good: 0,
+  };
+
+  countTotalFeedback = () => {
+    let count = 0;
+    Object.values(this.state).forEach(item => (count += item));
+    return count;
   };
 
   handleClickButton = e => {
@@ -45,7 +52,14 @@ export class App extends Component {
           />
         </Section>
         <Section title="Statistics">
-          <Statistics state={state} />
+          {this.countTotalFeedback() ? (
+            <Statistics
+              state={state}
+              countTotalFeedback={this.countTotalFeedback}
+            />
+          ) : (
+            <Notification message={'There is no feedback'} />
+          )}
         </Section>
       </div>
     );
